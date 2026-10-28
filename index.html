@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portrait Days | 撮影予約</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner"><div class="brand">Portrait <span>Days</span></div><div class="date-badge">モデル撮影会予約</div></div></header>
+  <main><section class="hero"><h1>撮影会予約</h1><p>ご希望のモデルと時間を選択してください</p></section><section class="model-grid" id="modelGrid" aria-label="モデル一覧"></section></main>
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="drawer-inner" id="drawerInner">
+      <div class="drawer-head"><h2 id="drawerTitle">予約内容</h2><button class="close-btn" id="closeDrawer" aria-label="閉じる">×</button></div>
+      <div class="booking-summary"><div class="summary-title" id="summaryTitle"></div><div class="summary-row"><span id="summarySlot"></span><button class="delete-btn" id="deleteBooking">削除</button></div><div class="total" id="totalPrice">合計：0円</div></div>
+      <form id="bookingForm" novalidate>
+        <div class="form-field"><label class="field-label" for="fullName">お名前※身分証と同じ名前</label><input id="fullName" name="fullName" type="text" autocomplete="name"><div class="error">お名前を入力してください。</div></div>
+        <div class="form-field"><label class="field-label" for="address">住所※身分証と同じ住所</label><input id="address" name="address" type="text" autocomplete="street-address"><div class="error">住所を入力してください。</div></div>
+        <div class="form-field"><label class="field-label" for="phone">電話番号</label><input id="phone" name="phone" type="tel" autocomplete="tel"><div class="error">電話番号を入力してください。</div></div>
+        <div class="form-field"><label class="field-label" for="email">メールアドレス</label><input id="email" name="email" type="email" autocomplete="email"><div class="error">メールアドレスを入力してください。</div></div>
+        <div class="form-field"><label class="field-label" for="sns">SNSアカウント詳細*</label><input id="sns" name="sns" type="text"><div class="error">SNSアカウント詳細を入力してください。</div><div class="sns-note">※普段からポートレート撮影の投稿をしているSNSアカウントをお持ちの方のみ受付いたします。捨てアカウント・作成直後のアカウント・投稿のないアカウント、またSNSアカウント情報の入力がないご新規様は受付できません。SNSアカウントの内容により、受付をお断りする場合がございます。また、予約確定メール送信後であっても、確認の結果、ご予約をお断りする場合がございます。あらかじめご了承ください。</div></div>
+        <div class="terms-row"><input id="terms" type="checkbox"><label for="terms">撮影時の注意事項・利用規約を確認し、同意します。</label></div><div class="error" id="termsError">利用規約への同意が必要です。</div>
+        <div class="privacy">入力された氏名・住所・電話番号・メールアドレス等は予約管理のために使用し、公開ページには表示されません。</div>
+        <button class="submit-btn" type="submit">この内容で予約を確定する</button>
+      </form>
+    </div>
+    <div class="success-screen" id="successScreen"><div class="success-icon">✓</div><h2>予約を受付しました</h2><p>ご予約ありがとうございます。確認メールをご確認ください。</p><button class="submit-btn" id="successClose">閉じる</button></div>
+  </aside>
+  <script src="data/models.js"></script><script src="js/app.js"></script>
+</body>
+</html>
